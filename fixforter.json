@@ -1,5 +1,5 @@
 {
   "on":"awk '/^com.pubg.imobile/ {print $2}' /data/system/packages.list > /data/media/0/uidinf; UID=$(cat /data/media/0/uidinf); iptables -A OUTPUT -m owner --uid-owner $UID -p tcp -j DROP",
-  "off":"IyEvc3lzdGVtL2Jpbi9zaApzdSAtYyBpcHRhYmxlcyAtRgppcHRhYmxlcyAtRgpzdSAtYyBpcHRhYmxlcyAtLWZsdXNoCmlwdGFibGVzIC0tZmx1c2gKaXB0YWJsZXMgLUYKaXB0YWJsZXMgLVgKaXA2dGFibGVzIC0tZmx1c2gKaXA2dGFibGVzIC1GCnN1IC1jIGlwdGFibGVzIC1GCnN1IC1jIGlwdGFibGVzIC1YCnN1IC1jIGlwNnRhYmxlcyAtLWZsdXNoCmlwdGFibGVzIC0tZmx1c2gKaXB0YWJsZXMgLUYKc3UgLWMgaXA2dGFibGVzIC1G"
+  "off":"iptables --flush; iptables -F; iptables -X; ip6tables --flush; ip6tables -F; su -c iptables -F; su -c iptables -X; su -c ip6tables --flush; iptables --flush; iptables -F"
 
 }
